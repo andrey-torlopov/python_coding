@@ -20,6 +20,7 @@ def create_image(width, height):
             z = 0
             ca = a
             cb = b
+
             while n < n_max:
                 a_new = a**2 - b**2
                 b_new = 2 * a * b
