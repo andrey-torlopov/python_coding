@@ -1,8 +1,4 @@
-from curses.panel import top_panel
-from operator import ge
-from re import S
 import pygame
-import numpy as np
 from point import Point
 from game_engine import GameEngine
 from screen_config import ScreenConfig
