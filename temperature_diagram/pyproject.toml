@@ -1,0 +1,55 @@
+[tool.poetry]
+name = "temperature-diagram"
+version = "0.1.0"
+description = ""
+authors = ["Andrey Torlopov <torlopov.mail@ya.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pygame = "^2.5.2"
+pillow = "^10.0.1"
+mypy = "^1.5.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 120
+show-fixes = true   
+src = ["."]
+
+# Enable pycodestyle (`E`) and Pyflakes (`F`) codes by default.
+select = [
+"E", # pycodestyle (`E`)
+"F",  # Pyflakes (`F`)
+"UP" # pyupgrade
+
+]
+ignore = []
+
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+]
