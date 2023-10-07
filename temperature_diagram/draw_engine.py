@@ -31,7 +31,6 @@ class DrawEngine:
         angle_delta = 0
         event_tick = 0
         radius_delta = 0.5
-
         minute_tick = 0
 
         while True:
@@ -59,7 +58,8 @@ class DrawEngine:
                     pygame.quit()
                     exit()
 
-            # circle_radius += radius_delta
+            # self.circle_radius += radius_delta
+
             pygame.draw.circle(self.screen, self.styles.black, circle_center, self.circle_radius * 1.1)
             pygame.draw.circle(self.screen, self.styles.circle_color, circle_center, self.circle_radius, 3)
             pygame.draw.circle(self.screen, self.styles.circle_color, circle_center, self.medium_circle_radius, 2)
