@@ -1,8 +1,11 @@
-from matplotlib.pylab import rand
-import numpy as np
-import matplotlib.pyplot as plt
-import utils
 import random
+
+import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib.pylab import rand
+from PIL import Image
+
+import utils
 
 images, labels = utils.load_dataset()
 
@@ -12,7 +15,7 @@ weights_hidden_to_output = np.random.uniform(-0.5, 0.5, (10, 20))
 bias_input_to_hidden = np.zeros((20, 1))
 bias_hidden_to_output = np.zeros((10, 1))
 
-epochs = 5
+epochs = 3
 e_loss = 0
 e_correct = 0
 learning_rate = 0.01
@@ -61,24 +64,28 @@ for epoch in range(epochs):
 # CHECKING
 
 # test_image = random.choice(images)
-test_image = plt.imread("five.png", format="png")
-# test_image = plt.imread("custom.jpg", format="jpeg")
-# Grayscale + Unit RGB + inverse colors
+# image_array = test_image.reshape(28, 28) * 255  # Assuming the image values are in the range [0, 1]
+# image = Image.fromarray(image_array.astype(np.uint8), 'L')
+# image.save("test_1.png")  # You can specify the filename and format here
+
+test_image = plt.imread("test_two.jpg", format="jpeg")
 def gray(rgb): return np.dot(rgb[..., :3], [0.299, 0.587, 0.114])
 
 
-test_image = 1 - (gray(test_image).astype("float32") / 255)
-
-
+test_image = (gray(test_image).astype("float32") / 255)
 image = np.reshape(test_image, (-1, 1))
+
 # Forward propagation (to hidden layer)
 hidden_raw = bias_input_to_hidden + weights_input_to_hidden @ image
 hidden = 1 / (1 + np.exp(-hidden_raw))  # sigmoid
 # Forward propagation (to output layer)
 output_raw = bias_hidden_to_output + weights_hidden_to_output @ hidden
 output = 1 / (1 + np.exp(-output_raw))
-
 plt.imshow(test_image.reshape(28, 28), cmap="Greys")
 plt.title(f"Your number is: {output.argmax()}")
-print("Random answer: ", random.choice(range(10)))
 plt.show()
+
+
+# image_array = test_image.reshape(28, 28) * 255  # Assuming the image values are in the range [0, 1]
+# image = Image.fromarray(image_array.astype(np.uint8), 'L')
+# image.save("saved_image2.png")  # You can specify the filename and format here
