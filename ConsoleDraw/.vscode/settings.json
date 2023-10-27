@@ -1,0 +1,50 @@
+{
+    "git.autofetch": true,
+    "python.languageServer": "Pylance",
+    "python.analysis.diagnosticMode": "openFilesOnly",
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.typeCheckingMode": "off",
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.terminal.activateEnvironment": true,
+    "[python]": { 
+        // Настройка автоматического форматирования. Удобно тем, что при сохранении
+        // автоматически приводит форматирование к правильному по мнению форматора виду
+        "editor.defaultFormatter":"ms-python.autopep8",
+        // Выбор форматера
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        },
+        "files.exclude": {
+            "**/.git": true,
+            "**/__pycache__": true,
+            "**/.DS_Store": true,
+            "**/Thumbs.db": true
+        },
+        "files.watcherExclude": {
+        // еще одна крайне любопытная опция - за изменениями файлов из
+        // этого списка VS Code не следит
+            "**/.git/objects/**": true,
+            "**/.git/subtree-cache/**": true,
+            "**/node_modules/*/**": true,
+            "**/.hg/store/**": true,
+            "**/__pycache__/**": true,
+            "**/.venv-*/**": true
+        },
+        "files.enableTrash": false
+    },
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "__pycache__": true,
+        "**/__pycache__": true
+    },
+    "python.testing.pytestArgs": [
+        "tests"
+    ],
+    "python.testing.pytestEnabled": true
+}
