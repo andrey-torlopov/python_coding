@@ -1,11 +1,17 @@
 {
+    "editor.fontFamily": "JetBrains Mono, monospace",
+    "editor.fontWeight": "normal",
+    "editor.fontLigatures": true,
+    "terminal.integrated.tabs.enabled": true,
+    "python.terminal.activateEnvironment": true,
+
     "git.autofetch": true,
+    "editor.fontSize": 16,
     "python.languageServer": "Pylance",
     "python.analysis.diagnosticMode": "openFilesOnly",
     "python.analysis.autoImportCompletions": true,
     "python.analysis.typeCheckingMode": "off",
     "python.analysis.inlayHints.functionReturnTypes": true,
-    "python.terminal.activateEnvironment": true,
     "[python]": { 
         // Настройка автоматического форматирования. Удобно тем, что при сохранении
         // автоматически приводит форматирование к правильному по мнению форматора виду
